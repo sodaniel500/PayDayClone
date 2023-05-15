@@ -1,7 +1,7 @@
 export default data = [
     {
         _id: 1,
-        title: 'Own a Global Account in Minutes',
+        title: 'Own a Global \nAccount in Minutes',
         description: 'Open USD, EUR & GBP Bank Account for free',
         icon1: '',
         iconName1: '',

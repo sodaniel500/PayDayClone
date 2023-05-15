@@ -34,8 +34,11 @@ const renderFlatlistItem = ({ item }) => {
                 />
             </View>
             <View style={{ paddingHorizontal: SIZES.base * 4, marginVertical: SIZES.base * 4 }}>
-                <Text style={{color:'#fff', fontSize: 20, textAlign:'center', fontWeight: 'bold', opacity: '0.4'}}>
+                <Text style={{color:'#fff', fontSize: 25, textAlign:'center', fontWeight: 'bold', }}>
                     {item.title}
+                    </Text>
+                    <Text style={{color:'gray', fontSize: 14, textAlign:'center', fontWeight: '300', opacity: 0.7,lineHeight: 25, letterSpacing: 0.1}}>
+                    {item.description}
                     </Text>
             </View>
 

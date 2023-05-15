@@ -18,26 +18,28 @@ const renderTopSection = () => {
 
 const renderFlatlistItem = ({ item }) => {
     return (
-    <View style={{
-        width:SIZES.width,
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }}>
         <View style={{
+            width: SIZES.width,
+            flex: 1,
             alignItems: 'center',
-            marginVertical: SIZES.base * 2
+            justifyContent: 'center'
         }}>
-           <ImageBackground 
-           source={item.img}
-           style={{width: 335, height: 335, resizeMode: 'contains'}}
-           />
-        </View>
-        <View style={{paddingHorizontal: SIZES.base*4, marginVertical: SIZES.base*4 }}>
+            <View style={{
+                alignItems: 'center',
+                marginVertical: SIZES.base * 2
+            }}>
+                <ImageBackground
+                    source={item.image}
+                    style={{ width: 345, height: 300, resizeMode: 'contains' }}
+                />
+            </View>
+            <View style={{ paddingHorizontal: SIZES.base * 4, marginVertical: SIZES.base * 4 }}>
+                <Text style={{color:'#fff', fontSize: 20, textAlign:'center', fontWeight: 'bold', opacity: '0.4'}}>
+                    {item.title}
+                    </Text>
+            </View>
 
         </View>
-
-    </View>
     )
 }
 
@@ -80,9 +82,9 @@ const renderBottomSection = () => {
                     width: 300,
                     height: 50
                 }}
-                activeOpacity={1}
+                    activeOpacity={1}
                 >
-                    <Text style={{ fontSize: 20, fontWeight: '400',color: COLORS.white }}>Continue</Text>
+                    <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Continue</Text>
                 </TouchableOpacity>
 
             </View>
@@ -99,13 +101,13 @@ const OnboardScreen = () => {
             {renderTopSection()}
 
             {/* FLATLIST with pages */}
-            <FlatList 
-            // data={data}
-            // pagingEnabled
-            // horizontal
-            // showsHorizontalScrollIndicator
-            // keyExtractor={item => item._id}
-            // renderItem={renderFlatlistItem}
+            <FlatList
+                data={data}
+                pagingEnabled
+                horizontal
+                showsHorizontalScrollIndicator
+                keyExtractor={item => item._id}
+                renderItem={renderFlatlistItem}
             />
 
             {/* BOTTOM SECTION - pagination &  next or GetStarted button */}
@@ -126,7 +128,10 @@ const styles = StyleSheet.create({
     top: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: SIZES.base * 14
+        paddingHorizontal: SIZES.base * 14,
+        top: 55,
+        right: 15,
+        position: 'absolute'
     },
     img: {
         height: 30,

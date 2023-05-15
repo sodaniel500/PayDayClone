@@ -7,7 +7,7 @@ export default data = [
         iconName1: '',
         icon2: '',
         iconName2: '',
-        image: require("../assets/1.jpg"),
+        image: require("../assets/3.jpg"),
     },
     {
         _id: 2,
@@ -27,7 +27,7 @@ export default data = [
         iconName1: '',
         icon2: '',
         iconName2: '',
-        image: require("../assets/3.jpg"),
+        image: require("../assets/1.jpg"),
     },
   ];
   

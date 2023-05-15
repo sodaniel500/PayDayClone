@@ -4,6 +4,8 @@ import { COLORS, SIZES } from '../constants'
 import { StatusBar } from 'expo-status-bar'
 import data from '../components/data'
 import { ImageBackground } from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const renderTopSection = () => {
     return (
@@ -34,13 +36,26 @@ const renderFlatlistItem = ({ item }) => {
                 />
             </View>
             <View style={{ paddingHorizontal: SIZES.base * 4, marginVertical: SIZES.base * 4 }}>
-                <Text style={{color:'#fff', fontSize: 25, textAlign:'center', fontWeight: 'bold', }}>
+                <Text style={{ color: '#fff', fontSize: 25, textAlign: 'center', fontWeight: 'bold', }}>
                     {item.title}
-                    </Text>
-                    <Text style={{color:'gray', fontSize: 14, textAlign:'center', fontWeight: '300', opacity: 0.7,lineHeight: 25, letterSpacing: 0.1}}>
+                </Text>
+                <Text style={{ color: 'gray', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1 }}>
                     {item.description}
-                    </Text>
+                </Text>
             </View>
+
+            <View style={{ flexDirection: 'row',  }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', right: 13 }}>
+                    <Ionicons name="remove-circle-outline" size={24} color="gray" />
+                    <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1, left: 4 }}>{item.iconName1}</Text>
+                </View>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', left: 10 }}>
+                    <MaterialIcons name="offline-bolt" size={24} color="gray" />
+                    <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1, left: 4 }}>{item.iconName2}</Text>
+                </View>
+
+            </View>
+
 
         </View>
     )
@@ -56,7 +71,7 @@ const renderBottomSection = () => {
                 paddingHorizontal: 15
             }}>
                 {/*Pagination*/}
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', bottom: 275, position: 'relative' }}>
                     {
                         // No of dots
                         [...Array(data.length)].map((_, index) => (
@@ -79,11 +94,13 @@ const renderBottomSection = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 15,
-                    backgroundColor: COLORS.black,
+                    backgroundColor: COLORS.background,
                     borderWidth: 0.5,
                     borderColor: 'gray',
                     width: 300,
-                    height: 50
+                    height: 50,
+                    bottom: 30,
+                    opacity: 0.9
                 }}
                     activeOpacity={1}
                 >

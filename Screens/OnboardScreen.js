@@ -1,118 +1,193 @@
-import { StyleSheet, Text, View, Image, SafeAreaView, FlatList, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, SafeAreaView, FlatList, TouchableOpacity, ImageBackground } from 'react-native'
+import React, { useEffect, useRef, useState, animated } from 'react'
 import { COLORS, SIZES } from '../constants'
 import { StatusBar } from 'expo-status-bar'
 import data from '../components/data'
-import { ImageBackground } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const renderTopSection = () => {
-    return (
-        <SafeAreaView>
-            <View style={styles.top}>
-                <Image source={require('./../assets/paydaylogo.png')} style={styles.img} />
-                <Text style={{ fontSize: 20, fontWeight: 'bold', color: COLORS.white }} >Padday</Text>
-            </View>
-        </SafeAreaView>
-    )
-}
 
-const renderFlatlistItem = ({ item }) => {
-    return (
-        <View style={{
-            width: SIZES.width,
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
-            <View style={{
-                alignItems: 'center',
-                marginVertical: SIZES.base * 2
-            }}>
-                <ImageBackground
-                    source={item.image}
-                    style={{ width: 345, height: 300, resizeMode: 'contains' }}
-                />
-            </View>
-            <View style={{ paddingHorizontal: SIZES.base * 4, marginVertical: SIZES.base * 4 }}>
-                <Text style={{ color: '#fff', fontSize: 25, textAlign: 'center', fontWeight: 'bold', }}>
-                    {item.title}
-                </Text>
-                <Text style={{ color: 'gray', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1 }}>
-                    {item.description}
-                </Text>
-            </View>
 
-            <View style={{ flexDirection: 'row',  }}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', right: 13 }}>
-                    <Ionicons name="remove-circle-outline" size={24} color="gray" />
-                    <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1, left: 4 }}>{item.iconName1}</Text>
+const OnboardScreen = () => {
+
+    const flatlistRef = useRef()
+    const [currentPage, setCurrentPage] = useState(0)
+    const [viewableItems, setViewableItems] = useState([])
+
+    const handleViewableItemsChanged = useRef(({ viewableItems }) => {
+        setViewableItems(viewableItems)
+    })
+    useEffect(() => {
+        if (!viewableItems[0] || currentPage === viewableItems[0].index)
+            return;
+        setCurrentPage(viewableItems[0].index)
+    })
+
+    const handleNext = () => {
+        if (currentPage == data.length - 1)
+            return;
+
+        flatlistRef.current.scrollToIndex({
+            animated: true,
+            index: currentPage + 1
+        })
+    }
+
+    const renderTopSection = () => {
+        return (
+            <SafeAreaView>
+                <View style={styles.top}>
+                    <Image source={require('./../assets/paydaylogo.png')} style={styles.img} />
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: COLORS.white }} >Padday</Text>
                 </View>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', left: 10 }}>
-                    <MaterialIcons name="offline-bolt" size={24} color="gray" />
-                    <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1, left: 4 }}>{item.iconName2}</Text>
+            </SafeAreaView>
+        )
+    }
+
+    const renderFlatlistItem = ({ item }) => {
+        return (
+            <View style={{
+                width: SIZES.width,
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                <View style={{
+                    alignItems: 'center',
+                    marginVertical: SIZES.base * 2
+                }}>
+                    <ImageBackground
+                        source={item.image}
+                        style={{ width: 345, height: 300, resizeMode: 'contains' }}
+                    />
+                </View>
+                <View style={{ paddingHorizontal: SIZES.base * 4, marginVertical: SIZES.base * 4 }}>
+                    <Text style={{ color: '#fff', fontSize: 25, textAlign: 'center', fontWeight: 'bold', }}>
+                        {item.title}
+                    </Text>
+                    <Text style={{ color: 'gray', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 0.7, lineHeight: 25, letterSpacing: 0.1 }}>
+                        {item.description}
+                    </Text>
                 </View>
 
+                <View style={{ flexDirection: 'row', }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', right: 13 }}>
+                        <Ionicons name="remove-circle-outline" size={24} color="#D6DBDF" />
+                        <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 1, lineHeight: 25, letterSpacing: 0.1, left: 4 }}>{item.iconName1}</Text>
+                    </View>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', left: 10 }}>
+                        <MaterialIcons name="offline-bolt" size={24} color="#D6DBDF" />
+                        <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', fontWeight: '300', opacity: 1, lineHeight: 25, letterSpacing: 0.1, left: 4 }}>{item.iconName2}</Text>
+                    </View>
+
+                </View>
+
+
             </View>
+        )
+    }
 
 
-        </View>
-    )
-}
+    const renderBottomSection = () => {
+        return (
+            <SafeAreaView>
+                <View style={{
+                    // flexDirection: 'row',
+                    alignItems: 'center',
+                    paddingHorizontal: 15
+                }}>
+                    {/*Pagination*/}
+                    <View style={{ flexDirection: 'row', alignItems: 'center', bottom: 275, position: 'relative' }}>
+                        {
+                            // No of dots
+                            [...Array(data.length)].map((_, index) => (
+                                <View
+                                    key={index}
+                                    style={{
+                                        width: 15,
+                                        height: 5,
+                                        borderRadius: 5,
+                                        backgroundColor: index == currentPage
+                                            ? COLORS.primary
+                                            : COLORS.white + '50',
+                                        marginRight: 8
+                                    }} />
+                            ))
+                        }
 
+                    </View>
 
-const renderBottomSection = () => {
-    return (
-        <SafeAreaView>
-            <View style={{
-                // flexDirection: 'row',
-                alignItems: 'center',
-                paddingHorizontal: 15
-            }}>
-                {/*Pagination*/}
-                <View style={{ flexDirection: 'row', alignItems: 'center', bottom: 275, position: 'relative' }}>
+                    {/* Continue button*/}
+                    {/* Show or Hide Continue btn by screen*/}
                     {
-                        // No of dots
-                        [...Array(data.length)].map((_, index) => (
-                            <View
-                                key={index}
+                        currentPage != data.length - 1 ? (
+
+
+                            <TouchableOpacity
+                                onPress={handleNext}
                                 style={{
-                                    width: 15,
-                                    height: 5,
-                                    borderRadius: 5,
-                                    backgroundColor: COLORS.primary,
-                                    marginRight: 8
-                                }} />
-                        ))
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    borderRadius: 15,
+                                    backgroundColor: COLORS.background,
+                                    borderWidth: 0.5,
+                                    borderColor: 'gray',
+                                    width: 310,
+                                    height: 50,
+                                    bottom: 30,
+                                    opacity: 0.9
+                                }}
+                                activeOpacity={1}
+                            >
+                                <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Continue</Text>
+                            </TouchableOpacity>
+
+                        ) : (
+                            //Join padday/login btn
+                            <View style={{ flexDirection: 'row', }}>
+                                <TouchableOpacity style={{
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    borderRadius: 15,
+                                    backgroundColor: COLORS.background,
+                                    borderWidth: 0.5,
+                                    borderColor: 'gray',
+                                    width: 150,
+                                    height: 50,
+                                    bottom: 30,
+                                    opacity: 0.9,
+                                    right: 5
+                                }}
+                                    activeOpacity={1}
+                                >
+                                    <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Join Padday</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={{
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    borderRadius: 15,
+                                    backgroundColor: '#171717',
+                                    borderWidth: 0.5,
+                                    borderColor: 'gray',
+                                    width: 150,
+                                    height: 50,
+                                    bottom: 30,
+                                    left: 5
+                                }}
+                                    activeOpacity={1}
+                                >
+                                    <Text style={{ fontSize: 20, fontWeight: '400', color: '#fff' }}>Login</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )
                     }
 
                 </View>
+            </SafeAreaView>
+        )
+    }
 
-                {/* Continue button*/}
-                <TouchableOpacity style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: 15,
-                    backgroundColor: COLORS.background,
-                    borderWidth: 0.5,
-                    borderColor: 'gray',
-                    width: 300,
-                    height: 50,
-                    bottom: 30,
-                    opacity: 0.9
-                }}
-                    activeOpacity={1}
-                >
-                    <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Continue</Text>
-                </TouchableOpacity>
-
-            </View>
-        </SafeAreaView>
-    )
-}
-
-const OnboardScreen = () => {
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
@@ -128,6 +203,12 @@ const OnboardScreen = () => {
                 showsHorizontalScrollIndicator
                 keyExtractor={item => item._id}
                 renderItem={renderFlatlistItem}
+
+                ref={flatlistRef}
+                onViewableItemsChanged={handleViewableItemsChanged.current}
+                viewabilityConfig={{ viewAreaCoveragePercentThreshold: 100 }}
+                initialNumToRender={1}
+                extraData={SIZES.width}
             />
 
             {/* BOTTOM SECTION - pagination &  next or GetStarted button */}

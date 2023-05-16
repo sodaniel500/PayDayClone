@@ -8,6 +8,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 
 
+
 const OnboardScreen = ({ navigation }) => {
 
     const flatlistRef = useRef()
@@ -175,6 +176,7 @@ const OnboardScreen = ({ navigation }) => {
                                         left: 5
                                     }}>
                                     <TouchableOpacity
+                                    onPress={() => navigation.navigate("Login")}
                                         activeOpacity={1}
                                     >
                                         <Text style={{ fontSize: 16, fontWeight: '400', color: '#fff' }}>Login</Text>

@@ -8,7 +8,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 
 
-const OnboardScreen = () => {
+const OnboardScreen = ({ navigation }) => {
 
     const flatlistRef = useRef()
     const [currentPage, setCurrentPage] = useState(0)
@@ -123,62 +123,62 @@ const OnboardScreen = () => {
                         currentPage != data.length - 1 ? (
 
                             <View
-                            style={{
-                                alignItems: 'center',
-                                borderRadius: 15,
-                                backgroundColor: COLORS.background,
-                                borderWidth: 0.5,
-                                borderColor: 'gray',
-                                width: '95%',
-                                opacity: 0.9,
-                                paddingVertical:13
-                         }}>
+                                style={{
+                                    alignItems: 'center',
+                                    borderRadius: 15,
+                                    backgroundColor: COLORS.background,
+                                    borderWidth: 0.5,
+                                    borderColor: 'gray',
+                                    width: '95%',
+                                    opacity: 0.9,
+                                    paddingVertical: 13
+                                }}>
                                 <TouchableOpacity
-                                onPress={handleNext}
-                                activeOpacity={1}
-                            >
-                                <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Continue</Text>
-                            </TouchableOpacity>
+                                    onPress={handleNext}
+                                    activeOpacity={1}
+                                >
+                                    <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Continue</Text>
+                                </TouchableOpacity>
                             </View>
 
                         ) : (
                             //Join padday/login btn
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                                 <View style={{
-                                       alignItems: 'center',
-                                       borderRadius: 15,
-                                       backgroundColor: COLORS.background,
-                                       borderWidth: 0.5,
-                                       borderColor: 'gray',
-                                       width: '46%',
-                                       opacity: 0.9,
-                                       paddingVertical:16,
-                                       right: 5
+                                    alignItems: 'center',
+                                    borderRadius: 15,
+                                    backgroundColor: COLORS.background,
+                                    borderWidth: 0.5,
+                                    borderColor: 'gray',
+                                    width: '46%',
+                                    opacity: 0.9,
+                                    paddingVertical: 16,
+                                    right: 5
                                 }}>
-                                <TouchableOpacity
-                                    activeOpacity={1}
-                                >
-                                    <Text style={{ fontSize: 16, fontWeight: '400', color: COLORS.white }}>Join Padday</Text>
-                                </TouchableOpacity>
+                                    <TouchableOpacity
+                                        activeOpacity={1}
+                                    >
+                                        <Text style={{ fontSize: 16, fontWeight: '400', color: COLORS.white }}>Join Padday</Text>
+                                    </TouchableOpacity>
                                 </View>
 
-                                 <View
-                                  style={{
-                                       alignItems: 'center',
-                                       borderRadius: 15,
-                                       backgroundColor: '#171717',
-                                       borderWidth: 0.5,
-                                       borderColor: 'gray',
-                                       width: '46%',
-                                       opacity: 0.9,
-                                       paddingVertical:16,
-                                       left: 5
-                                }}>
-                                <TouchableOpacity
-                                    activeOpacity={1}
-                                >
-                                    <Text style={{ fontSize: 16, fontWeight: '400', color: '#fff' }}>Login</Text>
-                                </TouchableOpacity></View>
+                                <View
+                                    style={{
+                                        alignItems: 'center',
+                                        borderRadius: 15,
+                                        backgroundColor: '#171717',
+                                        borderWidth: 0.5,
+                                        borderColor: 'gray',
+                                        width: '46%',
+                                        opacity: 0.9,
+                                        paddingVertical: 16,
+                                        left: 5
+                                    }}>
+                                    <TouchableOpacity
+                                        activeOpacity={1}
+                                    >
+                                        <Text style={{ fontSize: 16, fontWeight: '400', color: '#fff' }}>Login</Text>
+                                    </TouchableOpacity></View>
                             </View>
                         )
                     }

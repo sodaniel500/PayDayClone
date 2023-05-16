@@ -122,63 +122,63 @@ const OnboardScreen = () => {
                     {
                         currentPage != data.length - 1 ? (
 
-
-                            <TouchableOpacity
+                            <View
+                            style={{
+                                alignItems: 'center',
+                                borderRadius: 15,
+                                backgroundColor: COLORS.background,
+                                borderWidth: 0.5,
+                                borderColor: 'gray',
+                                width: '95%',
+                                opacity: 0.9,
+                                paddingVertical:13
+                         }}>
+                                <TouchableOpacity
                                 onPress={handleNext}
-                                style={{
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    borderRadius: 15,
-                                    backgroundColor: COLORS.background,
-                                    borderWidth: 0.5,
-                                    borderColor: 'gray',
-                                    width: 310,
-                                    height: 50,
-                                    bottom: 30,
-                                    opacity: 0.9
-                                }}
                                 activeOpacity={1}
                             >
                                 <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Continue</Text>
                             </TouchableOpacity>
+                            </View>
 
                         ) : (
                             //Join padday/login btn
-                            <View style={{ flexDirection: 'row', }}>
-                                <TouchableOpacity style={{
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    borderRadius: 15,
-                                    backgroundColor: COLORS.background,
-                                    borderWidth: 0.5,
-                                    borderColor: 'gray',
-                                    width: 150,
-                                    height: 50,
-                                    bottom: 30,
-                                    opacity: 0.9,
-                                    right: 5
-                                }}
+                            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                                <View style={{
+                                       alignItems: 'center',
+                                       borderRadius: 15,
+                                       backgroundColor: COLORS.background,
+                                       borderWidth: 0.5,
+                                       borderColor: 'gray',
+                                       width: '46%',
+                                       opacity: 0.9,
+                                       paddingVertical:16,
+                                       right: 5
+                                }}>
+                                <TouchableOpacity
                                     activeOpacity={1}
                                 >
-                                    <Text style={{ fontSize: 20, fontWeight: '400', color: COLORS.white }}>Join Padday</Text>
+                                    <Text style={{ fontSize: 16, fontWeight: '400', color: COLORS.white }}>Join Padday</Text>
                                 </TouchableOpacity>
+                                </View>
 
-                                <TouchableOpacity style={{
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    borderRadius: 15,
-                                    backgroundColor: '#171717',
-                                    borderWidth: 0.5,
-                                    borderColor: 'gray',
-                                    width: 150,
-                                    height: 50,
-                                    bottom: 30,
-                                    left: 5
-                                }}
+                                 <View
+                                  style={{
+                                       alignItems: 'center',
+                                       borderRadius: 15,
+                                       backgroundColor: '#171717',
+                                       borderWidth: 0.5,
+                                       borderColor: 'gray',
+                                       width: '46%',
+                                       opacity: 0.9,
+                                       paddingVertical:16,
+                                       left: 5
+                                }}>
+                                <TouchableOpacity
                                     activeOpacity={1}
                                 >
-                                    <Text style={{ fontSize: 20, fontWeight: '400', color: '#fff' }}>Login</Text>
-                                </TouchableOpacity>
+                                    <Text style={{ fontSize: 16, fontWeight: '400', color: '#fff' }}>Login</Text>
+                                </TouchableOpacity></View>
                             </View>
                         )
                     }

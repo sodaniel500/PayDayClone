@@ -6,12 +6,12 @@ import { COLORS } from '../../../constants';
 import { AntDesign } from '@expo/vector-icons';
 import CustomTxtInput from '../../../components/CustomTxtInput';
 
-export default function JoinPayday({ navigation }) {
+export default function InputName({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.hearder}>
         <AntDesign name="arrowleft" size={20} color="black" />
-        <Text style={{ fontSize: 18, fontWeight: '600', marginLeft: 40 }}>Reset</Text>
+        <Text style={{ fontSize: 18, fontWeight: '600', marginLeft: 40 }}>Create an account</Text>
       </View>
 
       <View style={{ marginTop: 30 }}>
@@ -50,9 +50,10 @@ export default function JoinPayday({ navigation }) {
         </View>
       </View>
 
-      <View style={{ marginTop: 410, alignItems: 'center' }}>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={{ color: '#fff', fontSize: 18 }}>Reset</Text>
+      <View style={{ marginTop: 345, alignItems: 'center' }}>
+        <TouchableOpacity style={styles.btn}
+        onPress={() => navigation.navigate("SetEmail")}>
+          <Text style={{ color: '#fff', fontSize: 18 }}>Continue</Text>
         </TouchableOpacity>
       </View>
 

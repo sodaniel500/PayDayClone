@@ -158,7 +158,7 @@ const OnboardScreen = ({ navigation }) => {
                                 }}>
                                     <TouchableOpacity
                                         activeOpacity={1}
-                                        onPress={() => navigation.navigate("JoinPayday")}
+                                        onPress={() => navigation.navigate("InputName")}
                                     >
                                         <Text style={{ fontSize: 16, fontWeight: '400', color: COLORS.white }}>Join Padday</Text>
                                     </TouchableOpacity>

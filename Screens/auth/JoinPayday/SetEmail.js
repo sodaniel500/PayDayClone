@@ -39,7 +39,7 @@ export default function SetEmail({ navigation }) {
                 </View>
             </View>
 
-            <View style={{ marginTop: 280, alignItems: 'center' }}>
+            <View style={{ marginTop: 260, alignItems: 'center' }}>
                 <TouchableOpacity style={styles.btn}  >
                   <Text style={{ color: '#fff', fontSize: 18 }}>Continue</Text>
                 </TouchableOpacity>

@@ -21,7 +21,7 @@ export default function Login({ navigation }) {
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Text style={{ marginTop: 5 }}>Don't have an account?</Text>
                 <TouchableOpacity style={{ top: 3, paddingLeft: 5 }}
-                onPress={() => navigation.navigate("JoinPayday")}>
+                onPress={() => navigation.navigate("InputName")}>
                     <Text style={{ fontWeight: 'bold' }}>Create an account.</Text>
                 </TouchableOpacity>
             </View>

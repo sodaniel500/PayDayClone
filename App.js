@@ -6,7 +6,7 @@ import OnboardScreen from './Screens/OnboardScreen';
 import InputName from './Screens/auth/JoinPayday/InputName';
 import Login from './Screens/auth/Login/Login';
 import Reset from './Screens/auth/Login/Reset';
-import SetEmail from './Screens/auth/JoinPayday/setEmail';
+import SetEmail from './Screens/auth/JoinPayday/SetEmail';
 
 const Stack = createNativeStackNavigator();
 

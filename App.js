@@ -7,6 +7,7 @@ import InputName from './Screens/auth/JoinPayday/InputName';
 import Login from './Screens/auth/Login/Login';
 import Reset from './Screens/auth/Login/Reset';
 import SetEmail from './Screens/auth/JoinPayday/SetEmail';
+import MainScreen from './Screens/MainScreen/MainScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ const MyStack = () => {
         <Stack.Screen name="SetEmail" component={SetEmail}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Reset" component={Reset}/>
+        <Stack.Screen name="MainScreen" component={MainScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

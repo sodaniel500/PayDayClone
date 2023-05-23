@@ -47,7 +47,8 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             </View>
             <View style={{ marginTop: 280, alignItems: 'center' }}>
-                <TouchableOpacity style={styles.btn}  >
+                <TouchableOpacity style={styles.btn} 
+                onPress={() => navigation.navigate("MainScreen")}>
                   <Text style={{ color: '#fff', fontSize: 18 }}>Login</Text>
                 </TouchableOpacity>
             </View>

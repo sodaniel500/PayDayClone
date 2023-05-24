@@ -9,27 +9,29 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const { width, height } = Dimensions.get('window')
 
-export default function BottomBar({ navigation }) { 
+export default function BottomBar({ homePress, walletPress, phonePress, settingPress }) {
     return (
         <View style={styles.bottomContainer}>
-        <View style={styles.bottomControl}>
+            <View style={styles.bottomControl}>
 
-            <TouchableOpacity onPress={() => { }}>
-                <Foundation name="home" size={24} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => { }}>
-                <Ionicons name="card-sharp" size={24} color="gray" />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => { }}>
-            <FontAwesome5 name="headphones-alt" size={24} color="gray" />
+                <TouchableOpacity
+                    onPress={homePress}>
+                    <Foundation name="home" size={24} color="black" />
+                </TouchableOpacity>
+                <TouchableOpacity
+                   onPress={walletPress}>
+                    <Ionicons name="card-sharp" size={24} color="gray" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={phonePress}>
+                    <FontAwesome5 name="headphones-alt" size={24} color="gray" />
 
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => { }}>
-            <Ionicons name="settings-sharp" size={24} color="gray" />
-            </TouchableOpacity>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={settingPress}>
+                    <Ionicons name="settings-sharp" size={24} color="gray" />
+                </TouchableOpacity>
 
+            </View>
         </View>
-    </View>
     )
 }
 

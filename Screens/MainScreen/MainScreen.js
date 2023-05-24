@@ -2,7 +2,10 @@ import { Text, View, StyleSheet, Dimensions, SafeAreaView, TouchableOpacity, Ima
 import React from 'react'
 import BottomBar from './BottomBar';
 import { CircleBtn } from '../../components/CustomBtn';
+import { useState } from 'react';
 import TopBar from './TopBar';
+import Home from '../Body/Home';
+import Wallet from '../Body/Wallet';
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,20 +14,45 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const { width, height } = Dimensions.get('window')
 
+
+
 export default function MainScreen({ navigation }) {
+
+    const [BottomTab, setBottomTab] = useState("home")
+
+    const handleHome = () => {
+        setBottomTab('home')
+    }
+
+    const handleWallet = () => {
+        setBottomTab('wallet')
+    }
+
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: '#F5FFFA' }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#263238' }}>
 
-            <TopBar />
+            {/* <TopBar /> */}
 
-            <View style={styles.container}>
-                <ScrollView>
-                    <Text>MainScreen</Text>
-                </ScrollView>
-            </View>
+
+            <ScrollView>
+                <View style={styles.container}>
+
+                    {
+                        BottomTab === "home" ?
+                            <Home />
+                            :
+                            BottomTab === "wallet" ?
+                                <Wallet />
+                            :
+                            <Home />
+                    }
+
+                </View>
+            </ScrollView>
+
 
             <View>
-                <BottomBar />
+                <BottomBar homePress={handleHome} walletPress={handleWallet} />
             </View>
 
 
@@ -35,8 +63,8 @@ export default function MainScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        // alignItems: 'center',
+        // justifyContent: 'center'
     },
     TopContainer: {
         borderTopColor: '#393E46',
@@ -52,3 +80,4 @@ const styles = StyleSheet.create({
         width: '80%',
     },
 })
+

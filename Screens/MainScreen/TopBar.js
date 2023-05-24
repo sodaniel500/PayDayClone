@@ -35,9 +35,14 @@ export default function TopBar({ navigation }) {
                 </View>
             {/* </View> */}
 
+            <View style={{flexDirection: 'row'}}>
             <TouchableOpacity onPress={() => { }}>
                 <Ionicons name="settings-sharp" size={24} color="gray" />
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => { }}>
+                <Ionicons name="settings-sharp" size={24} color="gray" />
+            </TouchableOpacity>
+            </View>
 
         {/* </View> */}
      </View> 
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginTop: 30,
         paddingHorizontal: 10,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#263238'
     },
     bottomControl: {
         flexDirection: 'row',

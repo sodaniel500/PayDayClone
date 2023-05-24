@@ -13,3 +13,14 @@ export const CircleBtn = () => {
         </TouchableOpacity>
     )
 }
+
+export const TxtBtn = () => {
+    return (
+
+        <View>
+            <TouchableOpacity>
+               
+            </TouchableOpacity>
+        </View>
+    )
+}

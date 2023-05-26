@@ -2,6 +2,7 @@ import { Text, StyleSheet, View, Dimensions, TouchableOpacity } from 'react-nati
 import React from 'react'
 import TopBar from './TopBar';
 import { useState } from 'react';
+import IconBtn from '../../components/IconBtn';
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,15 +20,9 @@ export default function BottomBar({ homePress, walletPress, phonePress, settingP
 
         <View>
 
-            {
-                Header === "home" ?
-                    <TopBar />
-                    :
-                    Header === "wallet" ?
-                        'null'
-                        :
-                        <TopBar />
-            }
+            <View>
+               
+            </View>
 
             <View style={styles.bottomContainer}>
                 <View style={styles.bottomControl}>

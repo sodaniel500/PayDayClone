@@ -15,18 +15,18 @@ export const CircleBtn = () => {
     )
 }
 
-export const TxtBtn = () => {
+export const TxtBtn = ({ icon, firstText, SecondText }) => {
     return (
 
         <View style={{ }}>
             <TouchableOpacity style={{flexDirection: 'row', alignItems:'center'}}>
-                <View style={{ width: 40, height: 40, backgroundColor:'gray', borderRadius: 50, alignItems: 'center', justifyContent:'center'}}>
-                <Ionicons name="arrow-up-circle-outline" size={24} color="black" />
+                <View style={{ width: 40, height: 40, backgroundColor:'gray', borderRadius: 50, alignItems: 'center', justifyContent:'center', right: 9}}>
+                <Ionicons name={icon} size={24} color="black" />
                 </View>
 
                 <View>
-                    <Text style={{ fontSize:16, color: 'gray'}}>Send money</Text>
-                    <Text style={{ fontSize:16, color: 'gray'}}>Transfer money locally or abroad</Text>
+                    <Text style={{ fontSize:16, color: 'gray'}}>{firstText}</Text>
+                    <Text style={{ fontSize:16, color: 'gray'}}>{SecondText}</Text>
                 </View>
             </TouchableOpacity>
         </View>

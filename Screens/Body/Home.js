@@ -28,8 +28,12 @@ export default function Home({ navigation }) {
 
       <View style={styles.body}>
        
-        <View>
-          <TxtBtn />
+        <View>=
+          <TxtBtn
+           icon="arrow-down-circle"
+           firstText='Send money'
+           SecondText='Transfer money locally or abroad'/>
+          
         </View>
 
       </View>

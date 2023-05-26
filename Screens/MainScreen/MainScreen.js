@@ -19,6 +19,7 @@ const { width, height } = Dimensions.get('window')
 export default function MainScreen({ navigation }) {
 
     const [BottomTab, setBottomTab] = useState("home")
+    const [Header, setHeader] = useState("home")
 
     const handleHome = () => {
         setBottomTab('home')
@@ -31,6 +32,15 @@ export default function MainScreen({ navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#263238' }}>
 
+            <View>
+                {
+                    Header === "home" ?
+                        <TopBar />
+                        :
+                       < BottomBar/>
+                }
+            </View>
+
 
             <ScrollView>
                 <View style={styles.container}>
@@ -41,8 +51,8 @@ export default function MainScreen({ navigation }) {
                             :
                             BottomTab === "wallet" ?
                                 <Wallet />
-                            :
-                            <Home />
+                                :
+                                <Home />
                     }
 
                 </View>

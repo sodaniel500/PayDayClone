@@ -31,8 +31,6 @@ export default function MainScreen({ navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#263238' }}>
 
-            {/* <TopBar /> */}
-
 
             <ScrollView>
                 <View style={styles.container}>

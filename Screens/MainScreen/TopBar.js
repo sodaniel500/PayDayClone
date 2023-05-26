@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginTop: 30,
         paddingHorizontal: 10,
-        backgroundColor: '#263238'
+        backgroundColor: '#263238',
+        // position: 'absolute'
     },
     bottomControl: {
         flexDirection: 'row',

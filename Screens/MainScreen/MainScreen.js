@@ -26,7 +26,7 @@ export default function MainScreen({ navigation }) {
     }
 
     const handleWallet = () => {
-        setBottomTab('wallet')
+        setBottomTab('wallet') 
     }
 
     return (

@@ -29,6 +29,7 @@ export default function Home({ navigation }) {
                 <View style={styles.body}>
 
                     <View style={styles.box}>
+                        <View style={{marginTop: 20}}>
                         <TxtBtn
                             icon="arrow-down-circle"
                             firstText='Send money'
@@ -38,7 +39,7 @@ export default function Home({ navigation }) {
                             icon="arrow-down-circle"
                             firstText='Request money'
                             SecondText='Get cash from a contact or via a' />
-
+                        </View>
                     </View>
 
                     <View style={styles.box2}>
@@ -46,11 +47,12 @@ export default function Home({ navigation }) {
                             <Text style={{ fontWeight: '700', color: 'gray' }}>Get start with Payday</Text>
                         </View>
 
-                        <View>
+                        <View style={{marginTop: 15}}>
                             <TxtBtn
                                 icon="arrow-down-circle"
-                                firstText='This lets you unlock other'
-                                SecondText='Link' />
+                                firstText=''
+                                SecondText='This lets you unlock other'
+                                thridText='Link' />
 
                             <TxtBtn
                                 icon="arrow-down-circle"
@@ -77,7 +79,7 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
     body: {
-        backgroundColor: '#fff',
+        backgroundColor: '#F8F8FF',
         alignItems: 'center',
         height: 500,
         marginTop: 103
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 19,
-        borderWidth: 0.7,
+        // borderWidth: 0.7,
         borderColor: 'gray'
     },
     box2: {
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent:'space-evenly',
         borderRadius: 19,
-        borderWidth: 0.7,
+        // borderWidth: 0.7,
         borderColor: 'gray',
 
     }

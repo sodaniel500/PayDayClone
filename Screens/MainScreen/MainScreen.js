@@ -19,7 +19,6 @@ const { width, height } = Dimensions.get('window')
 export default function MainScreen({ navigation }) {
 
     const [BottomTab, setBottomTab] = useState("home")
-    const [Header, setHeader] = useState("home")
 
     const handleHome = () => {
         setBottomTab('home')
@@ -34,10 +33,10 @@ export default function MainScreen({ navigation }) {
 
             <View>
                 {
-                    Header === "home" ?
+                    BottomTab === "home" ?
                         <TopBar />
                         :
-                       < BottomBar/>
+                       null
                 }
             </View>
 

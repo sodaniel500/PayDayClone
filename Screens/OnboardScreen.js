@@ -9,7 +9,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 
 
-const OnboardScreen = ({ navigation }) => {
+const OnboardScreen = ({ navigation }) => {   
 
     const flatlistRef = useRef()
     const [currentPage, setCurrentPage] = useState(0)

@@ -6,6 +6,8 @@ import { useState } from 'react';
 import TopBar from './TopBar';
 import Home from '../Body/Home';
 import Wallet from '../Body/Wallet';
+import Phone from '../Body/Phone';
+import Settings from '../Body/Settings';
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -25,7 +27,15 @@ export default function MainScreen({ navigation }) {
     }
 
     const handleWallet = () => {
-        setBottomTab('wallet') 
+        setBottomTab('wallet')
+    }
+
+    const handlePhone = () => {
+        setBottomTab('phone')
+    }
+
+    const handleSettings = () => {
+        setBottomTab('Settings')
     }
 
     return (
@@ -36,7 +46,7 @@ export default function MainScreen({ navigation }) {
                     BottomTab === "home" ?
                         <TopBar />
                         :
-                       null
+                        null
                 }
             </View>
 
@@ -51,7 +61,13 @@ export default function MainScreen({ navigation }) {
                             BottomTab === "wallet" ?
                                 <Wallet />
                                 :
-                                <Home />
+                                BottomTab === "phone" ?
+                                    <Phone />
+                                    :
+                                    BottomTab === "settings" ?
+                                        <Settings />
+                                        :
+                                        <Home />
                     }
 
                 </View>
@@ -59,7 +75,7 @@ export default function MainScreen({ navigation }) {
 
 
             <View>
-                <BottomBar homePress={handleHome} walletPress={handleWallet} />
+                <BottomBar homePress={handleHome} walletPress={handleWallet} phonePress={handlePhone} settingPress={handleSettings} />
             </View>
 
 

@@ -47,7 +47,7 @@ export default function Home({ navigation }) {
                             <Text style={{ fontWeight: '700', color: 'gray' }}>Get start with Payday</Text>
                         </View>
 
-                        <View style={{marginTop: 15}}>
+                        <View style={{marginTop: 15, alignItems: 'center', justifyContent: 'center'}}>
                             <TxtBtn
                                 icon="arrow-down-circle"
                                 firstText=''
@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
         height: '50%',
         width: '90%',
         bottom: 77,
-        alignItems: 'center',
-        justifyContent:'space-evenly',
+        // alignItems: 'center',
+        // justifyContent:'space-evenly',
         borderRadius: 19,
         // borderWidth: 0.7,
         borderColor: 'gray',

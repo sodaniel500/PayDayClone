@@ -3,7 +3,12 @@ import React from 'react'
 
 export default function Settings() {
   return (
-    <View>
+    <View style={{alignItems:'center'}}>
+
+        <View style={{marginTop:100, color:'#fff'}}>
+            <Text>Settings</Text>
+        </View>
+
       <Text>Settings</Text>
       <Text>Settings</Text>
       <Text>Settings</Text>
@@ -14,4 +19,6 @@ export default function Settings() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})

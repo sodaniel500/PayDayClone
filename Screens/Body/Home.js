@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 19,
-        // borderWidth: 0.7,
         borderColor: 'gray'
     },
     box2: {
@@ -111,10 +110,7 @@ const styles = StyleSheet.create({
         width: '90%',
         bottom: 77,
         alignItems: 'center',
-        // justifyContent:'space-evenly',
         borderRadius: 19,
-        // borderWidth: 0.7,
-        // borderColor: 'gray',
 
     },
     box3: {
@@ -122,11 +118,8 @@ const styles = StyleSheet.create({
         height: '15%',
         width: '90%',
         bottom: 50,
-        // alignItems: 'center',
         justifyContent: 'flex-start',
         borderRadius: 19,
-        // borderWidth: 0.7,
-        // borderColor: 'gray',
         paddingVertical:20
     },
     txt:{

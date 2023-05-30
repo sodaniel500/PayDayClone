@@ -67,7 +67,7 @@ export default function MainScreen({ navigation }) {
                                     BottomTab === "settings" ?
                                         <Settings />
                                         :
-                                        <Home />
+                                        <Settings />
                     }
 
                 </View>

@@ -5,6 +5,11 @@ export default function Phone() {
   return (
     <View>
       <Text>Phone</Text>
+      <Text>Phone</Text>
+      <Text>Phone</Text>
+      <Text>Phone</Text>
+      <Text>Phone</Text>
+      <Text>Phone</Text>
     </View>
   )
 }

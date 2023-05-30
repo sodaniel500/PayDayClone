@@ -43,14 +43,14 @@ export default function Home({ navigation }) {
                     </View>
 
                     <View style={styles.box2}>
-                        <View style={{ marginRight: 160, marginTop: 1 }}>
+                        <View style={{ marginRight: 160, marginTop: 15 }}>
                             <Text style={{ fontWeight: '700', color: 'gray' }}>Get start with Payday</Text>
                         </View>
 
-                        <View style={{marginTop: 15, alignItems: 'center', justifyContent: 'center'}}>
+                        <View style={{marginTop: 19, justifyContent: 'center'}}>
                             <TxtBtn
                                 icon="arrow-down-circle"
-                                firstText=''
+                                firstText='Verify your account'
                                 SecondText='This lets you unlock other'
                                 thridText='Link' />
 
@@ -69,6 +69,15 @@ export default function Home({ navigation }) {
 
                     </View>
 
+                    <Text style={{color:'black', bottom:60, marginRight:250, fontWeight:'700' }}>Refer & earn</Text>
+                
+                     
+                    <View style={styles.box3}>
+                     <Text style={styles.txt}>Earn $3 every</Text>
+                     <Text style={styles.txt}>time you invite</Text>
+                     <Text style={styles.txt}>a friend (T&C's apply)</Text>
+                    </View>
+
                 </View>
             </ScrollView>
 
@@ -82,7 +91,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#F8F8FF',
         alignItems: 'center',
         height: 500,
-        marginTop: 103
+        marginTop: 103,
+        paddingVertical:20
     },
     box: {
         backgroundColor: 'white',
@@ -97,14 +107,33 @@ const styles = StyleSheet.create({
     },
     box2: {
         backgroundColor: 'white',
-        height: '50%',
+        height: '58%',
         width: '90%',
         bottom: 77,
-        // alignItems: 'center',
+        alignItems: 'center',
         // justifyContent:'space-evenly',
         borderRadius: 19,
         // borderWidth: 0.7,
-        borderColor: 'gray',
+        // borderColor: 'gray',
 
+    },
+    box3: {
+        backgroundColor: 'black',
+        height: '15%',
+        width: '90%',
+        bottom: 50,
+        // alignItems: 'center',
+        justifyContent: 'flex-start',
+        borderRadius: 19,
+        // borderWidth: 0.7,
+        // borderColor: 'gray',
+        paddingVertical:20
+    },
+    txt:{
+        fontSize: 15,
+        fontWeight:'700',
+        color:'white',
+        marginLeft:15,
+        bottom: 17
     }
 })

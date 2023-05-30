@@ -5,6 +5,11 @@ export default function Wallet({ navigation }) {
   return (
     <View>
       <Text>Wallet</Text>
+      <Text>Wallet</Text>
+      <Text>Wallet</Text>
+      <Text>Wallet</Text>
+      <Text>Wallet</Text>
+      <Text>Wallet</Text>
     </View>
   )
 }

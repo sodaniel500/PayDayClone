@@ -5,6 +5,11 @@ export default function Settings() {
   return (
     <View>
       <Text>Settings</Text>
+      <Text>Settings</Text>
+      <Text>Settings</Text>
+      <Text>Settings</Text>
+      <Text>Settings</Text>
+      <Text>Settings</Text>
     </View>
   )
 }
